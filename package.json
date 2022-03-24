@@ -1,0 +1,28 @@
+{
+  "name": "node-crud-tuto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CyrielleGl/node-crud-tuto.git"
+  },
+  "author": "Cyrielle",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/CyrielleGl/node-crud-tuto/issues"
+  },
+  "homepage": "https://github.com/CyrielleGl/node-crud-tuto#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
