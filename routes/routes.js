@@ -1,25 +1,22 @@
 import express from 'express'
-import { getTest, postTest, addRoom, getRooms, getRoom, updateRoom, deleteRoom } from '../controllers/roomControllers.js'
+import { addRoom, getRooms, getRoom, updateRoom, deleteRoom } from '../controllers/roomControllers.js'
 import { catchErrors } from '../helpers.js'
+
+import path, { dirname } from 'path'
+import { fileURLToPath } from 'url'
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 const router = express.Router()
 
-router.get('/', (req, res) => {
-    res.send('Hello les Hardcoders')
-})
+router.get('/api/rooms', catchErrors(getRooms))
 
-router.get('/test', getTest)
+router.get('/api/rooms/:id', catchErrors(getRoom))
 
-router.post('/test', postTest)
+router.post('/api/rooms', catchErrors(addRoom))
 
-router.post('/room', catchErrors(addRoom))
+router.patch('/api/rooms/:id', catchErrors(updateRoom))
 
-router.get('/room/:id', catchErrors(getRoom))
-
-router.patch('/room/:id', catchErrors(updateRoom))
-
-router.delete('/room/:id', catchErrors(deleteRoom))
-
-router.get('/rooms', catchErrors(getRooms))
+router.delete('/api/rooms/:id', catchErrors(deleteRoom))
 
 export default router
