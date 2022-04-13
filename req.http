@@ -1,0 +1,24 @@
+GET http://localhost:5000/api/rooms 
+
+###
+
+POST http://localhost:5000/api/rooms HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Suite nuptiale",
+    "maxPersons": 2
+}
+
+### 
+
+PATCH http://localhost:5000/api/rooms/623ca5312d48cc352066227e HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Basique duo"
+}
+
+### 
+
+GET http://localhost:5000/api/rooms/623ca20f7fbab650fc868e77
