@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import RoomCard from './RoomCard'
+import { Link } from 'react-router-dom'
 
 const Rooms = () => {
     const [rooms, setRooms] = useState([])
@@ -15,7 +17,9 @@ const Rooms = () => {
     return (
         <>
             {rooms.map(room => (
-                <h2 key={room._id}>{room.name}</h2>
+                <Link key={room._id} to={room._id}>
+                    <RoomCard room={room}></RoomCard>
+                </Link>
             ))}
         </>
     )

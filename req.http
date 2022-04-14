@@ -6,8 +6,9 @@ POST http://localhost:5000/api/rooms HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Suite nuptiale",
-    "maxPersons": 2
+    "name": "Trio",
+    "maxPersons": 3,
+    "promo": false
 }
 
 ### 
@@ -16,7 +17,8 @@ PATCH http://localhost:5000/api/rooms/623ca5312d48cc352066227e HTTP/1.1
 content-type: application/json
 
 {
-    "name": "Basique duo"
+    "name": "Basique duo",
+    "promo": true
 }
 
 ### 
