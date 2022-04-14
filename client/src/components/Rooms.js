@@ -18,7 +18,7 @@ const Rooms = () => {
         <>
             {rooms.map(room => (
                 <Link key={room._id} to={room._id}>
-                    <RoomCard room={room}></RoomCard>
+                    <RoomCard room={room} />
                 </Link>
             ))}
         </>

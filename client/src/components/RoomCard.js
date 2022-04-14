@@ -6,7 +6,7 @@ const { Meta } = Card
 const RoomCard = ( { room }) => {
     return (
         <div style={{ width: 300, margin: '1rem' }}>
-            <Badge count={room.promo ? 'Promo' : ''}>
+            <Badge count={room.promo ? 'Promo' : null}>
                 <Card
                     cover={
                         <img 

@@ -1,11 +1,5 @@
 import RoomModel from '../models/roomModel.js'
 
-export const addRoom = async (req, res) => {
-    const room = new RoomModel(req.body)
-    await room.save()
-    res.send(room)
-}
-
 // GET ALL
 export const getRooms = async (req, res) => {
     const rooms = await RoomModel.find({})
@@ -14,8 +8,14 @@ export const getRooms = async (req, res) => {
 
 // GET ONE
 export const getRoom = async (req, res) => {
-    // console.log(req.params.id)
-    const room = await RoomModel.find({_id : req.params.id})
+    const rooms = await RoomModel.find({_id : req.params.id})
+    res.send(rooms[0])
+}
+
+// ADD ONE
+export const addRoom = async (req, res) => {
+    const room = new RoomModel(req.body)
+    await room.save()
     res.send(room)
 }
 
