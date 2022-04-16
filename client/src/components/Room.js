@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import RoomCard from './RoomCard'
+import RoomForm from './RoomForm'
 
 const Room = () => {
     const { id } = useParams()
@@ -20,7 +21,7 @@ const Room = () => {
         <div>
             <RoomCard room={room} />
             <h2>Editer</h2>
-            <h2>ROOM FORM</h2>
+            <RoomForm room={room} />
         </div>
     ) : null
 }
