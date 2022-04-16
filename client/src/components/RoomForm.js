@@ -16,7 +16,7 @@ const layout = {
     },
   };
 
-const RoomForm = ({ id, room }) => {
+const RoomForm = ({ id, room, setRoom }) => {
   const [values, setValues] = useState(null)
 
   useEffect(() => {
@@ -24,8 +24,18 @@ const RoomForm = ({ id, room }) => {
     console.log(values)
   }, [room, id])
 
-  const onFinish = (values) => {
+  const onFinish = async (values) => {
+    await fetch(`/api/rooms/${id}`, { 
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: 'PATCH',
+        body: JSON.stringify(values)
+    })
+
     console.log('Success:', values);
+    setRoom(values)
   };
 
   const onFinishFailed = (errorInfo) => {

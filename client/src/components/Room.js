@@ -21,7 +21,7 @@ const Room = () => {
         <div>
             <RoomCard room={room} />
             <h2>Editer</h2>
-            <RoomForm id={id} room={room} />
+            <RoomForm id={id} room={room} setRoom={setRoom} />
         </div>
     ) : null
 }
