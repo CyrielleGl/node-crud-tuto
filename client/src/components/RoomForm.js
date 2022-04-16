@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { Form, Input, Button } from 'antd';
 
 const layout = {
@@ -15,7 +16,14 @@ const layout = {
     },
   };
 
-const RoomForm = () => {
+const RoomForm = ({ id, room }) => {
+  const [values, setValues] = useState(null)
+
+  useEffect(() => {
+    setValues(room)
+    console.log(values)
+  }, [room, id])
+
   const onFinish = (values) => {
     console.log('Success:', values);
   };
@@ -23,6 +31,13 @@ const RoomForm = () => {
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
+
+  const handleChange = event => {
+      const { value, name } = event.target
+      setValues({ ...values, [name]: value })
+  }
+
+  if (!values) return null
 
   return (
     <Form
@@ -37,6 +52,7 @@ const RoomForm = () => {
       <Form.Item
         label="Nom"
         name="name"
+        initialValue={values.name}
         rules={[
           {
             required: true,
@@ -44,19 +60,25 @@ const RoomForm = () => {
           },
         ]}
       >
-        <Input name="name" />
+        <Input value={values.name} name="name" onChange={handleChange} />
       </Form.Item>
 
       <Form.Item
         label="Capacité max"
         name="maxPersons"
+        initialValue={values.maxPersons}
         rules={[
           {
             required: false
           },
         ]}
       >
-        <Input type="number" name="maxPersons" />
+        <Input 
+            value={values.maxPersons} 
+            type="number" 
+            name="maxPersons"
+            onChange={handleChange} 
+        />
       </Form.Item>
 
       <Form.Item { ... tailLayout }>
