@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import RoomCard from './RoomCard'
+import NewRoomForm from './NewRoomForm'
 import { Link } from 'react-router-dom'
+import { Card } from 'antd'
 
 const Rooms = () => {
     const [rooms, setRooms] = useState([])
@@ -21,6 +23,13 @@ const Rooms = () => {
                     <RoomCard room={room} />
                 </Link>
             ))}
+            <div style={{ width: 300, margin: '1rem' }}>
+                <Card>
+                    <h2 style={{textAlign: 'center', marginBottom: '1.2rem'}}>Ajouter une chambre</h2>
+                    <NewRoomForm />
+                </Card>
+            </div>
+
         </>
     )
 }

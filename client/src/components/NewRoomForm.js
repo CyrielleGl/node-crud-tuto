@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Form, Input, Button, Select } from 'antd';
 
 const layout = {
     labelCol: {
-      span: 8,
+      span: 20,
     },
     wrapperCol: {
-      span: 16,
+      span: 24,
     },
   };
-  const tailLayout = {
+const tailLayout = {
     wrapperCol: {
       offset: 8,
       span: 16,
@@ -19,25 +19,22 @@ const layout = {
 
 const { Option } = Select;
 
-const RoomForm = ({ id, room, setRoom }) => {
+const NewRoomForm = () => {
     const navigate = useNavigate()
     const [values, setValues] = useState(null)
 
-  useEffect(() => {
-    setValues(room)
-  }, [room, id])
-
   const onFinish = async (values) => {
-    await fetch(`/api/rooms/${id}`, { 
+    await fetch(`/api/rooms`, { 
         headers: {
             Accept: 'application/json',
             'Content-Type': 'application/json'
         },
-        method: 'PATCH',
+        method: 'POST',
         body: JSON.stringify(values)
     })
+    .then(response => response.json())
+    .then(data => navigate(`/rooms/${data._id}`));
 
-    setRoom(values)
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -47,7 +44,6 @@ const RoomForm = ({ id, room, setRoom }) => {
   const handleChange = event => {
       const { value, name } = event.target
       setValues({ ...values, [name]: value })
-      console.warn(event.target)
   }
 
   const [form] = Form.useForm();
@@ -64,22 +60,12 @@ const RoomForm = ({ id, room, setRoom }) => {
 
       default:
         return 'false';
-
     }
   };
 
-  const handleDelete = async () => {
-    await fetch(`/api/rooms/${id}`, { 
-        method: 'DELETE'
-    })
-
-    navigate('/rooms')
-  }
-
-  if (!values) return null
-
   return (
     <Form form={form}
+    layout="vertical"
       { ... layout }
       name="basic"
       initialValues={{
@@ -91,7 +77,6 @@ const RoomForm = ({ id, room, setRoom }) => {
       <Form.Item
         label="Nom"
         name="name"
-        initialValue={values.name}
         rules={[
           {
             required: true,
@@ -99,13 +84,12 @@ const RoomForm = ({ id, room, setRoom }) => {
           },
         ]}
       >
-        <Input value={values.name} name="name" onChange={handleChange} />
+        <Input value="name" name="name" onChange={handleChange} />
       </Form.Item>
 
       <Form.Item
         label="Capacité max"
         name="maxPersons"
-        initialValue={values.maxPersons}
         rules={[
           {
             required: false
@@ -113,7 +97,7 @@ const RoomForm = ({ id, room, setRoom }) => {
         ]}
       >
         <Input 
-            value={values.maxPersons} 
+            value="maxPersons"
             type="number" 
             name="maxPersons"
             onChange={handleChange} 
@@ -123,7 +107,6 @@ const RoomForm = ({ id, room, setRoom }) => {
       <Form.Item
         label="En promotion"
         name="promo"
-        // initialValue={values.promo}
         rules={[
           {
             required: false
@@ -131,9 +114,8 @@ const RoomForm = ({ id, room, setRoom }) => {
         ]}
       >
         <Select
-          value={values.promo}
           onChange={onPromoChange}
-          // allowClear
+          allowClear
         >
           <Option value="true">Oui</Option>
           <Option value="false">Non</Option>
@@ -142,14 +124,11 @@ const RoomForm = ({ id, room, setRoom }) => {
 
       <Form.Item { ... tailLayout }>
         <Button type="primary" htmlType="submit">
-          Soumettre
-        </Button>
-        <Button onClick={handleDelete} type="danger" style={{ marginLeft: '1rem' }}>
-            Supprimer
+          Ajouter
         </Button>
       </Form.Item>
     </Form>
   );
 };
 
-export default RoomForm
+export default NewRoomForm
