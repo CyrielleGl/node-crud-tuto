@@ -19,4 +19,8 @@ router.patch('/api/rooms/:id', catchErrors(updateRoom))
 
 router.delete('/api/rooms/:id', catchErrors(deleteRoom))
 
+router.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build/index.html'))
+})
+
 export default router
