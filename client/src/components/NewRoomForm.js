@@ -106,6 +106,7 @@ const NewRoomForm = () => {
 
       <Form.Item
         label="En promotion"
+        initialValue="false"
         name="promo"
         rules={[
           {
@@ -114,7 +115,6 @@ const NewRoomForm = () => {
         ]}
       >
         <Select
-          defaultValue="false"
           onChange={onPromoChange}
         >
           <Option value="true">Oui</Option>
