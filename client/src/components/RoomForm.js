@@ -47,7 +47,6 @@ const RoomForm = ({ id, room, setRoom }) => {
   const handleChange = event => {
       const { value, name } = event.target
       setValues({ ...values, [name]: value })
-      console.warn(event.target)
   }
 
   const [form] = Form.useForm();
@@ -123,7 +122,7 @@ const RoomForm = ({ id, room, setRoom }) => {
       <Form.Item
         label="En promotion"
         name="promo"
-        // initialValue={values.promo}
+        initialValue={values.promo === true ? "true" : "false"}
         rules={[
           {
             required: false
@@ -131,9 +130,7 @@ const RoomForm = ({ id, room, setRoom }) => {
         ]}
       >
         <Select
-          value={values.promo}
           onChange={onPromoChange}
-          // allowClear
         >
           <Option value="true">Oui</Option>
           <Option value="false">Non</Option>

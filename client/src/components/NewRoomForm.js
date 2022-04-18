@@ -114,8 +114,8 @@ const NewRoomForm = () => {
         ]}
       >
         <Select
+          defaultValue="false"
           onChange={onPromoChange}
-          allowClear
         >
           <Option value="true">Oui</Option>
           <Option value="false">Non</Option>
