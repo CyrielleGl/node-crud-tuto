@@ -26,7 +26,7 @@ const About = () => {
                 Et alors que je doutais pouvoir me régaler autant qu'avec Angular/Java, je souhaite finalement <b>poursuivre mon apprentissage sur React/NodeJs</b>, 
                 et bien sûr avoir l'opportunité de monter sur un poste de full-stack sur ces technologies.</p>
                 <br/>
-                <p>Vous souhaitez en savoir plus sur mes compétences et expériences ? <a href={CV} target="_blank" rel="noreferrer">Consultez mon CV en cliquant sur ce lien !</a></p>
+                <p><b>Vous souhaitez en savoir plus</b> sur mes compétences et expériences ? <a href={CV} target="_blank" rel="noreferrer">Consultez mon CV en cliquant sur ce lien !</a></p>
             </div>
             <div style={{ textAlign: 'center' }}>
                 <div style={{ width: 300, margin: '3rem', display: 'inline-block' }}>
