@@ -9,7 +9,7 @@ const Home = () => {
                 afin de postuler dans votre entreprise sur un poste de full-stack junior React/Node.js.</p>
             <p>Ayant vite pris goût à cette stack technique, <b>j'ai amélioré au mieux le projet proposé</b>, 
                 afin de vous montrer mes capacités ainsi que mon envie d'aller toujours plus loin.</p>
-            <p><b>Vous pouvez tester les fonctionnalités</b> présentes sur l'application, mise en ligne sur <b>Heroku</b>, 
+            <p><b>Vous pouvez tester les fonctionnalités</b> présentes dans la partie <Link to="/rooms">Exercice appliqué</Link> de l'application, mise en ligne sur <b>Heroku</b>, 
                 et dont la BDD est tenue par <b>MongoDB</b>.</p>
             <br/>
             <p><b>Si vous souhaitez me contacter</b> pour une proposition de poste, ou pour me faire un éventuel retour sur mon travail afin de l'améliorer,

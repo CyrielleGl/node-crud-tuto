@@ -5,4 +5,16 @@ h1 {
 
 h2 {
     font-size: 1rem !important;
+    text-align: center;
+}
+
+ul {
+    display: table-cell; 
+    list-style: circle; 
+    padding: 1rem; 
+    margin: 1rem;
+}
+
+li {
+    text-align: left;
 }

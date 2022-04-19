@@ -7,7 +7,7 @@ const { Header, Content, Footer } = Layout
 const contentStyle = {
     display: 'flex',
     flexWrap: 'wrap',
-    padding: '3rem 3rem',
+    padding: '3rem 8rem',
     justifyContent: 'center'
 }
 
@@ -20,7 +20,7 @@ const HCLayout = ({ children }) => {
                         <NavLink to='/' activeclassname="is-active">Accueil</NavLink>
                     </Menu.Item>
                     <Menu.Item key='2'>
-                        <NavLink to='/rooms' activeclassname="is-active">Chambres</NavLink>
+                        <NavLink to='/rooms' activeclassname="is-active">Exercice appliqué</NavLink>
                     </Menu.Item>
                     <Menu.Item key='3'>
                         <NavLink to='/about' activeclassname="is-active">A Propos</NavLink>
