@@ -12,11 +12,15 @@ const Home = () => {
             <p><b>Vous pouvez tester les fonctionnalités</b> présentes sur l'application, mise en ligne sur <b>Heroku</b>, 
                 et dont la BDD est tenue par <b>MongoDB</b>.</p>
             <br/>
-            <p><b>Si vous souhaitez me contacter</b> pour un éventuel poste, ou pour me faire un éventuel retour sur mon travail afin de l'améliorer,
-                je vous invite à retrouver toutes mes coordonnées utiles sur la page <Link to="/contact">contact</Link> !
+            <p><b>Si vous souhaitez me contacter</b> pour une proposition de poste, ou pour me faire un éventuel retour sur mon travail afin de l'améliorer,
+                je vous invite à retrouver toutes mes coordonnées utiles sur la page <Link to="/contact">Contact</Link> !
             </p>
             <br/>
             <p><b>Pour consulter le repository GitHub</b> correspondant à ce projet, je vous invite à suivre ce lien : <a href="https://github.com/CyrielleGl/node-crud-tuto" target="_blank" rel="noreferrer">mon repository.</a></p>
+            <br/>
+            <p>Enfin, <b>pour en savoir plus sur moi</b>, rendez-vous sur la page <Link to="/about">A propos</Link>.</p>
+            <br/>
+            <h2>A bientôt !</h2>
         </div>
     )
 }
