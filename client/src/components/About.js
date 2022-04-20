@@ -4,7 +4,7 @@ import CV from '../pages/files/CV.pdf'
 
 const About = () => {
     return (
-        <div>
+        <>
             <div>
                 <h1>A Propos</h1>
                 <p>Après la <b>validation d'un Master en marketing et communication</b> suivie d'une expérience professionnelle dans la communication,
@@ -30,7 +30,7 @@ const About = () => {
             </div>
             <div style={{ textAlign: 'center' }}>
                 <div style={{ width: 300, margin: '3rem', display: 'inline-block' }}>
-                    <Badge count='Mes compétences' style={{ backgroundColor: 'purple'}}>
+                    <Badge count='Mes compétences' style={{ backgroundColor: 'purple', right: '1.2rem'}}>
                         <Card style={{ minWidth: '18rem'}}>
                             <h2>Une fullstack junior compétente</h2>
                             <ul>
@@ -49,7 +49,7 @@ const About = () => {
                     </Badge>
                 </div>
                 <div style={{ width: 300, margin: '3rem', display: 'inline-block' }}>
-                    <Badge count='React/NodeJs' style={{ backgroundColor: 'purple'}}>
+                    <Badge count='React/NodeJs' style={{ backgroundColor: 'purple', right: '1.2rem'}}>
                         <Card style={{ minWidth: '18rem'}}>
                             <h2>Ce que j'aime dans React/NodeJs</h2>
                             <ul>
@@ -64,7 +64,7 @@ const About = () => {
                 </div>
             </div>
 
-        </div>
+        </>
 
     )
 }
