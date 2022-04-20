@@ -38,6 +38,8 @@ const RoomForm = ({ id, room, setRoom }) => {
     })
 
     setRoom(values)
+    window.location.reload();
+
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -63,7 +65,6 @@ const RoomForm = ({ id, room, setRoom }) => {
 
       default:
         return 'false';
-
     }
   };
 
@@ -139,7 +140,7 @@ const RoomForm = ({ id, room, setRoom }) => {
 
       <Form.Item { ... tailLayout }>
         <Button type="primary" htmlType="submit">
-          Soumettre
+          Modifier
         </Button>
         <Button onClick={handleDelete} type="danger" style={{ marginLeft: '1rem' }}>
             Supprimer

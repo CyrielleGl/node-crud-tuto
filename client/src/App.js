@@ -1,8 +1,8 @@
 import React from 'react'
 import Layout from './components/Layout'
 import { Routes, Route } from 'react-router-dom'
-import "./main.less"
-import "./styles.css"
+import "./styles/main.less"
+import "./styles/styles.css"
 
 import HomePage from './pages/HomePage'
 import RoomsPage from './pages/RoomsPage'
