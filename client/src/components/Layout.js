@@ -7,7 +7,7 @@ const { Header, Content, Footer } = Layout
 const contentStyle = {
     display: 'flex',
     flexWrap: 'wrap',
-    padding: '3rem 8rem',
+    padding: '3rem 3rem',
     justifyContent: 'center'
 }
 
